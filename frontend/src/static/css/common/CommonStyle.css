@@ -1,5 +1,5 @@
-body {
-    background-image: url('../src/assets/images/IndexFond.jpg');
+.login-page {
+    background-image: url('../../../assets/images/IndexFond.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;

@@ -66,163 +66,165 @@ export default function SignUpPage() {
   };
 
   return (
-    <div className="flex items-center bg-transparent rounded-[3rem] xl:h-[85vh] xl:w-[75vw] xl:mt-[3rem] xl:ml-40">
+    <div className="login-page xl:w-[100vw] xl:pt-[0.1rem] xl:pb-[2.3rem]">
+      <div className="flex items-center bg-transparent rounded-[3rem] xl:h-[85vh] xl:w-[75vw] xl:mt-[3rem] xl:ml-40">
       
-      {/* Formulaire d'inscription */}
-      <div className="bg-white rounded-4xl xl:h-[90vh] xl:w-[65vw] xl:mx-[4.5rem] text-center">
-        <div id="logo">
-          <p className="poppins-title xl:text-[1rem] text-black xl:w-[8vw] xl:pt-[0.5rem] xl:ml-[46rem]">Ge<span className="text-blue-500">Stage</span></p>
-        </div>
+        {/* Formulaire d'inscription */}
+        <div className="bg-white rounded-4xl xl:h-[90vh] xl:w-[65vw] xl:mx-[4.5rem] text-center">
+          <div id="logo">
+            <p className="poppins-title xl:text-[1rem] text-black xl:w-[8vw] xl:pt-[0.5rem] xl:ml-[46rem]">Ge<span className="text-blue-500">Stage</span></p>
+          </div>
 
-        <div className="xl:mt-[0.85rem] xl:px-[0.5rem]" id='titre et sous-titre'>
-          <h2 className="poppins-title">Inscription</h2>
-          <p className="text-center poppins-light text-[1rem]">Veuillez remplir les informations suivantes pour créer un compte</p>
-        </div>
-        
-        <div className="xl:mt-[0.85rem] xl:py-[0.25rem] xl:h-[60vh]" id='champs de formulaire'>
+          <div className="xl:mt-[0.85rem] xl:px-[0.5rem]" id='titre et sous-titre'>
+            <h2 className="poppins-title">Inscription</h2>
+            <p className="text-center poppins-light text-[1rem]">Veuillez remplir les informations suivantes pour créer un compte</p>
+          </div>
+          
+          <div className="xl:mt-[0.85rem] xl:py-[0.25rem] xl:h-[60vh]" id='champs de formulaire'>
 
-          <form onSubmit={handleSubmit}>
-            <div className="flex">
+            <form onSubmit={handleSubmit}>
+              <div className="flex">
 
-              <div className="xl:mx-[2.5rem] xl:w-[27vw] xl:pt-[0.25rem]" id='Première partie du formulaire'>
-                
-                <div className="input-container xl:mb-3 xl:w-[95%] xl:ml-[0.8rem] poppins-light">
-                  <input 
-                    type="text" 
-                    id="nom" 
-                    name="nom" 
-                    required
-                    className="form-control"
-                    placeholder="Votre nom"
-                    value={formData.nom}
-                    onChange={handleChange}
-                  />
-                  {errors.nom && <span className="text-red-500 text-xs">{errors.nom}</span>}
+                <div className="xl:mx-[2.5rem] xl:w-[27vw] xl:pt-[0.25rem]" id='Première partie du formulaire'>
+                  
+                  <div className="input-container xl:mb-3 xl:w-[95%] xl:ml-[0.8rem] poppins-light">
+                    <input 
+                      type="text" 
+                      id="nom" 
+                      name="nom" 
+                      required
+                      className="form-control"
+                      placeholder="Votre nom"
+                      value={formData.nom}
+                      onChange={handleChange}
+                    />
+                    {errors.nom && <span className="text-red-500 text-xs">{errors.nom}</span>}
+                  </div>
+
+                  <div className="input-container xl:mb-3 xl:w-[95%] xl:ml-[0.8rem] xl:mt-[2.5rem] poppins-light">
+                    <input 
+                      type="text" 
+                      id="prenom" 
+                      name="prenom" 
+                      required
+                      className="form-control"
+                      placeholder="Votre prénom"
+                      value={formData.prenom}
+                      onChange={handleChange}
+                    />
+                    {errors.prenom && <span className="text-red-500 text-xs">{errors.prenom}</span>}
+                  </div>
+
+                  <div className="input-container xl:mb-3 xl:w-[95%] xl:ml-[0.8rem] xl:mt-[2.5rem] poppins-light">
+                    <input 
+                      type="email" 
+                      id="email" 
+                      name="email" 
+                      required
+                      className="form-control"
+                      placeholder="Votre email"
+                      value={formData.email}
+                      onChange={handleChange}
+                    />
+                    {errors.email && <span className="text-red-500 text-xs">{errors.email}</span>}
+                  </div>
+
+                  <div className="input-container xl:mb-3 xl:w-[95%] xl:ml-[0.8rem] xl:mt-[2.5rem] poppins-light">
+                    <input
+                      type="password"
+                      id="motdepasse"
+                      name="motdepasse"
+                      required
+                      className="form-control"
+                      value={formData.motdepasse}
+                      onChange={handleChange}
+                      placeholder="Mot de passe"
+                    />
+                    {errors.motdepasse && <p className="text-red-500 text-sm">{errors.motdepasse}</p>}
+                  </div>
+
+                  <div className="input-container xl:mb-3 xl:w-[95%] xl:ml-[0.8rem] xl:mt-[2.5rem] poppins-light">
+                    <input
+                      type="password"
+                      id="confirmmotdepasse"
+                      name="confirmmotdepasse"
+                      required
+                      className="form-control"
+                      value={formData.confirmMotdepasse}
+                      onChange={handleChange}
+                      placeholder="Confirmez votre mot de passe"
+                    />
+                    {errors.motdepasse && <p className="text-red-500 text-sm">{errors.motdepasse}</p>}
+                  </div>
+
                 </div>
 
-                <div className="input-container xl:mb-3 xl:w-[95%] xl:ml-[0.8rem] xl:mt-[2.5rem] poppins-light">
-                  <input 
-                    type="text" 
-                    id="prenom" 
-                    name="prenom" 
-                    required
-                    className="form-control"
-                    placeholder="Votre prénom"
-                    value={formData.prenom}
-                    onChange={handleChange}
-                  />
-                  {errors.prenom && <span className="text-red-500 text-xs">{errors.prenom}</span>}
-                </div>
+                <div className="xl:px-[0.5rem] xl:w-[27vw] xl:pt-[0.25rem]" id='Deuxième partie du formulaire'>
+                  <div className="input-container xl:mb-3 xl:w-[95%] xl:ml-[0.8rem] poppins-light">
+                    <input 
+                      type="text" 
+                      id="etablissement" 
+                      name="etablissement" 
+                      required
+                      className="form-control"
+                      placeholder="Etablissement d'origine"
+                      value={formData.etablissement}
+                      onChange={handleChange}
+                    />
+                    {errors.etablissement && <span className="text-red-500 text-xs">{errors.etablissement}</span>}
+                  </div>
 
-                <div className="input-container xl:mb-3 xl:w-[95%] xl:ml-[0.8rem] xl:mt-[2.5rem] poppins-light">
-                  <input 
-                    type="email" 
-                    id="email" 
-                    name="email" 
-                    required
-                    className="form-control"
-                    placeholder="Votre email"
-                    value={formData.email}
-                    onChange={handleChange}
-                  />
-                  {errors.email && <span className="text-red-500 text-xs">{errors.email}</span>}
-                </div>
+                  <div className="input-container xl:mb-3 xl:w-[95%] xl:ml-[0.8rem] xl:mt-[2.5rem] poppins-light">
+                    <input 
+                      type="text" 
+                      id="contact" 
+                      name="contact" 
+                      required
+                      className="form-control"
+                      placeholder="Votre numéro de contact"
+                      value={formData.contact}
+                      onChange={handleChange}
+                    />
+                    {errors.contact && <span className="text-red-500 text-xs">{errors.contact}</span>}
+                  </div>
 
-                <div className="input-container xl:mb-3 xl:w-[95%] xl:ml-[0.8rem] xl:mt-[2.5rem] poppins-light">
-                  <input
-                    type="password"
-                    id="motdepasse"
-                    name="motdepasse"
-                    required
-                    className="form-control"
-                    value={formData.motdepasse}
-                    onChange={handleChange}
-                    placeholder="Mot de passe"
-                  />
-                  {errors.motdepasse && <p className="text-red-500 text-sm">{errors.motdepasse}</p>}
-                </div>
+                  <div className="input-container xl:mb-3 xl:w-[95%] xl:ml-[0.8rem] xl:mt-[2.5rem] poppins-light">
+                    <input 
+                      type="text" 
+                      id="filiere" 
+                      name="filiere" 
+                      required
+                      className="form-control"
+                      placeholder="Votre filière"
+                      value={formData.filiere}
+                      onChange={handleChange}
+                    />
+                    {errors.filiere && <span className="text-red-500 text-xs">{errors.filiere}</span>}
+                  </div>
 
-                <div className="input-container xl:mb-3 xl:w-[95%] xl:ml-[0.8rem] xl:mt-[2.5rem] poppins-light">
-                  <input
-                    type="password"
-                    id="confirmmotdepasse"
-                    name="confirmmotdepasse"
-                    required
-                    className="form-control"
-                    value={formData.confirmMotdepasse}
-                    onChange={handleChange}
-                    placeholder="Confirmez votre mot de passe"
-                  />
-                  {errors.motdepasse && <p className="text-red-500 text-sm">{errors.motdepasse}</p>}
+                  <div className="input-container xl:mb-3 xl:w-[95%] xl:ml-[0.8rem] xl:mt-[2.5rem] poppins-light">
+                    <input 
+                      type="text" 
+                      id="niveau" 
+                      name="niveau" 
+                      required
+                      className="form-control"
+                      placeholder="Votre niveau d'études"
+                      value={formData.niveau}
+                      onChange={handleChange}
+                    />
+                    {errors.niveau && <span className="text-red-500 text-xs">{errors.niveau}</span>}
+                  </div>
+
+                  <div className="items-center xl:mt-[2.5rem] text-[1.2rem] poppins-light">
+                    <button type="submit" className="bg-blue-500 text-white xl:w-[10vw] xl:py-[0.25rem] rounded">S'inscrire</button>
+                  </div>
                 </div>
 
               </div>
-
-              <div className="xl:px-[0.5rem] xl:w-[27vw] xl:pt-[0.25rem]" id='Deuxième partie du formulaire'>
-                <div className="input-container xl:mb-3 xl:w-[95%] xl:ml-[0.8rem] poppins-light">
-                  <input 
-                    type="text" 
-                    id="etablissement" 
-                    name="etablissement" 
-                    required
-                    className="form-control"
-                    placeholder="Etablissement d'origine"
-                    value={formData.etablissement}
-                    onChange={handleChange}
-                  />
-                  {errors.etablissement && <span className="text-red-500 text-xs">{errors.etablissement}</span>}
-                </div>
-
-                <div className="input-container xl:mb-3 xl:w-[95%] xl:ml-[0.8rem] xl:mt-[2.5rem] poppins-light">
-                  <input 
-                    type="text" 
-                    id="contact" 
-                    name="contact" 
-                    required
-                    className="form-control"
-                    placeholder="Votre numéro de contact"
-                    value={formData.contact}
-                    onChange={handleChange}
-                  />
-                  {errors.contact && <span className="text-red-500 text-xs">{errors.contact}</span>}
-                </div>
-
-                <div className="input-container xl:mb-3 xl:w-[95%] xl:ml-[0.8rem] xl:mt-[2.5rem] poppins-light">
-                  <input 
-                    type="text" 
-                    id="filiere" 
-                    name="filiere" 
-                    required
-                    className="form-control"
-                    placeholder="Votre filière"
-                    value={formData.filiere}
-                    onChange={handleChange}
-                  />
-                  {errors.filiere && <span className="text-red-500 text-xs">{errors.filiere}</span>}
-                </div>
-
-                <div className="input-container xl:mb-3 xl:w-[95%] xl:ml-[0.8rem] xl:mt-[2.5rem] poppins-light">
-                  <input 
-                    type="text" 
-                    id="niveau" 
-                    name="niveau" 
-                    required
-                    className="form-control"
-                    placeholder="Votre niveau d'études"
-                    value={formData.niveau}
-                    onChange={handleChange}
-                  />
-                  {errors.niveau && <span className="text-red-500 text-xs">{errors.niveau}</span>}
-                </div>
-
-                <div className="items-center xl:mt-[2.5rem] text-[1.2rem] poppins-light">
-                  <button type="submit" className="bg-blue-500 text-white xl:w-[10vw] xl:py-[0.25rem] rounded">S'inscrire</button>
-                </div>
-              </div>
-
-            </div>
-            
-          </form>
+              
+            </form>
+          </div>
         </div>
       </div>
     </div>

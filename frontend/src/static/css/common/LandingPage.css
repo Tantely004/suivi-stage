@@ -1,6 +1,12 @@
-body {
-    background-image: url('../src/assets/images/ImageFond.jpg');
+.landing-page {
+    background-image: url('../../../assets/images/ImageFond.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+
+    margin: 0;
+    padding: 0;
+    display: flex;                  /* Optionnel, utile pour centrer le contenu */
+    justify-content: center;       /* Optionnel */
+    align-items: center;
 }
