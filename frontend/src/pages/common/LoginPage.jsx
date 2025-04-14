@@ -5,7 +5,7 @@ import '../../static/css/common/CommonStyle.css';
 export default function LoginPage () {
   return (
     <div className="login-page xl:w-[100vw] xl:pt-[0.1rem] xl:pb-[2.3rem]">
-      <div className="bg-transparent flex items-center bg-green-400 rounded-[3rem] xl:h-[85vh] xl:w-[75vw] xl:mt-[3rem] xl:ml-40">
+      <div className="bg-transparent flex items-center rounded-[3rem] xl:h-[85vh] xl:w-[75vw] xl:mt-[3rem] xl:ml-40">
 
         {/* Formulaire de connexion */}
         <div className=" bg-white rounded-bl-[3rem] rounded-l-[3rem] xl:h-[85vh] xl:w-[35vw] text-center">
@@ -41,8 +41,10 @@ export default function LoginPage () {
               </div>
 
               <div className="items-center xl:mt-[2rem] text-[1.15rem] poppins-light">
-                <button type="submit" className="bg-black text-white xl:w-[10vw] xl:py-[0.25rem] rounded">Connexion</button>
-
+                {/* Bouton de navigation temporaire vers dashboardstagiaire sans submit */}
+                <Link to="/dashboardstagiaire">
+                  <button className="bg-black text-white xl:w-[10vw] xl:py-[0.25rem] rounded">Connexion</button>
+                </Link>
                 <div className="xl:mt-[0.5rem]">
                   {/* Bouton de navigation */}
                   <Link to="/signuppage">
