@@ -1,10 +1,9 @@
 .landing-page {
-    background-image: url('../../../assets/images/ImageFond-removebg.png');
+    background-image: url('../../../assets/images/ImageFond.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
 
-    margin: 0;
     padding: 0;
     display: flex;                  /* Optionnel, utile pour centrer le contenu */
     justify-content: center;       /* Optionnel */

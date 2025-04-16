@@ -1,0 +1,29 @@
+/* Espace entre le header (mois) et les jours */
+.p-datepicker-header {
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #e5e7eb; /* petite ligne claire */
+    margin-bottom: 0.5rem;
+}
+
+/* Jours : lettres et chiffres en noir */
+.p-datepicker .p-datepicker-calendar th,
+.p-datepicker .p-datepicker-calendar td span {
+    color: #111827;  /* noir élégant */
+}
+
+/* Colonne des semaines : fond gris clair */
+.p-datepicker .p-datepicker-calendar .p-datepicker-weeknumber {
+    background-color: #e5e7eb;
+    color: #374151;
+}
+
+/* Date sélectionnée : fond bleu & texte blanc */
+.p-datepicker .p-datepicker-calendar td.p-highlight > span {
+    background: #3b82f6 !important; /* bleu Tailwind 500 */
+    color: white !important;
+}
+
+/* Bordures des cellules : léger espacement */
+.p-datepicker .p-datepicker-calendar td {
+    padding: 0.5rem;
+}

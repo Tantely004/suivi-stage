@@ -1,0 +1,6 @@
+.login-page {
+    background-image: linear-gradient(rgba(97, 95, 95, 0.5)), url('../../../assets/images/LoginFond.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}

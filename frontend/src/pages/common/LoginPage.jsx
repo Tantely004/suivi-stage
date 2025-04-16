@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import ImageLogin from '../../assets/images/ImageLogin.jpg';
-import '../../static/css/common/CommonStyle.css';
+import '../../static/css/common/LoginPage.css';
 
 export default function LoginPage () {
   return (
@@ -47,7 +47,7 @@ export default function LoginPage () {
                 </Link>
                 <div className="xl:mt-[0.5rem]">
                   {/* Bouton de navigation */}
-                  <Link to="/signuppage">
+                  <Link to="/signuppagestagiaire">
                     <button className="bg-blue-700 text-white xl:ml-[12rem] xl:w-[10vw] xl:py-[0.25rem] rounded">S'inscrire</button>
                   </Link>
                 </div>
