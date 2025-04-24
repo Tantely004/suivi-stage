@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { Calendar } from 'primereact/calendar';
 import { Card } from 'primereact/card';
-import { Button } from 'primereact/button';
+import { useNavigate } from 'react-router-dom';
+import { FaArrowCircleRight } from 'react-icons/fa';
 
 const CalendrierEncadreur = () => {
   const [selectedDate, setSelectedDate] = useState(null);
+  const navigate = useNavigate();
 
   return (
     <div className="flex-1 p-8 bg-gray-100 min-h-screen">
@@ -12,7 +14,7 @@ const CalendrierEncadreur = () => {
 
       <div className="grid grid-cols-1 xl:grid-cols-2 gap-6">
         <Card title="📆 Calendrier" className="shadow-sm bg-white">
-          <div className="flex justify-center">
+          <div className="flex justify-center p-6">
             <Calendar
               value={selectedDate}
               onChange={(e) => setSelectedDate(e.value)}
@@ -27,7 +29,7 @@ const CalendrierEncadreur = () => {
           )}
         </Card>
 
-        <Card title="🗓️ Entretiens Planifiés" className="shadow-sm bg-white">
+        <Card title="🗓️ Entretiens Planifiés" className="shadow-sm bg-white relative">
           <ul className="space-y-4 text-gray-700 text-sm">
             <li>
               <p className="font-semibold">15 Avril 2025 — Jean Rakoto</p>
@@ -38,6 +40,13 @@ const CalendrierEncadreur = () => {
               <p>📌 Présentation avancée du projet</p>
             </li>
           </ul>
+
+          <button
+            className="absolute bottom-3 right-3 text-blue-600 text-xl hover:text-blue-800"
+            onClick={() => navigate("/manageentretiensencadreur")}
+          >
+            <FaArrowCircleRight />
+          </button>
         </Card>
       </div>
     </div>

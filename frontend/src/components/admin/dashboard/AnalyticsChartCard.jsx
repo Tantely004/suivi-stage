@@ -1,34 +1,41 @@
-import { Card } from 'primereact/card';
-import { Chart } from 'primereact/chart';
-import { useState, useEffect } from 'react';
+import React from 'react';
+import { Bar } from 'react-chartjs-2';
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend,
+} from 'chart.js';
+
+ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
+
+const data = {
+  labels: ['Jan', 'Fév', 'Mar', 'Avr', 'Mai'],
+  datasets: [
+    {
+      label: 'Utilisateurs actifs',
+      backgroundColor: '#3B82F6',
+      data: [20, 35, 50, 45, 70],
+    },
+  ],
+};
+
+const options = {
+  responsive: true,
+  plugins: {
+    legend: { display: false },
+    title: { display: true, text: 'Évolution des utilisateurs actifs' },
+  },
+};
 
 const AnalyticsChartCard = () => {
-  const [chartData, setChartData] = useState({});
-  const [chartOptions, setChartOptions] = useState({});
-
-  useEffect(() => {
-    const data = {
-      labels: ['Stagiaires', 'Encadreurs', 'Projets'],
-      datasets: [
-        {
-          label: 'Répartition',
-          data: [15, 4, 8],
-          backgroundColor: ['#007bff', '#28a745', '#ffc107'],
-        },
-      ],
-    };
-    const options = {
-      responsive: true,
-      maintainAspectRatio: false
-    };
-    setChartData(data);
-    setChartOptions(options);
-  }, []);
-
   return (
-    <Card title="📈 Répartition générale" className="shadow-sm bg-white h-80">
-      <Chart type="bar" data={chartData} options={chartOptions} className="h-full" />
-    </Card>
+    <div className="bg-white shadow rounded-lg p-6 h-72 poppins-light">
+      <Bar data={data} options={options} />
+    </div>
   );
 };
 

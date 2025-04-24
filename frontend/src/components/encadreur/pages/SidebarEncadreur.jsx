@@ -8,38 +8,38 @@ const SidebarEncadreur = ({ isExpanded, setIsExpanded }) => {
   return (
     <div className="h-full flex flex-col poppins-light">
       <button 
-        className="p-4 focus:outline-none text-black"
+        className="p-4 focus:outline-none text-gray-300"
         onClick={() => setIsExpanded(!isExpanded)}
       >
         <FaBars />
       </button>
 
-      {isExpanded && <div className="p-6 text-xl font-bold text-black">Ge<span className="text-blue-700">Stage</span></div>}
+      {isExpanded && <div className="xl:px-[1.5rem] xl:py-[0.25rem] xl:text-[1.40rem] font-bold text-gray-200">Ge<span className="text-blue-500">Stage</span></div>}
 
       <nav className="flex flex-col space-y-2 mt-8">
-        <Link to="/dashboardencadreur" className={`flex items-center px-4 py-3 hover:bg-gray-100 ${isActive('/dashboardencadrant')}`}>
-          <FaChartBar className="text-black text-lg mr-3" />
-          {isExpanded && <span>Dashboard</span>}
+        <Link to="/dashboardencadreur" className={`flex items-center px-4 py-3 hover:bg-blue-700 ${isActive('/dashboardencadrant')}`}>
+          <FaChartBar className="text-gray-300 text-lg mr-3" />
+          {isExpanded && <span className="text-gray-300">Tableau de bord</span>}
         </Link>
-        <Link to="/gestionstagiaires" className={`flex items-center px-4 py-3 hover:bg-gray-100 ${isActive('/gestionstagiaires')}`}>
-          <FaUserGraduate className="text-black text-lg mr-3" />
-          {isExpanded && <span>Stagiaires</span>}
+        <Link to="/gestionstagiaires" className={`flex items-center px-4 py-3 hover:bg-blue-700 ${isActive('/gestionstagiaires')}`}>
+          <FaUserGraduate className="text-gray-300 text-lg mr-3" />
+          {isExpanded && <span className="text-gray-300">Stagiaires</span>}
         </Link>
-        <Link to="/analyseia" className={`flex items-center px-4 py-3 hover:bg-gray-100 ${isActive('/analyseetrecommendationia')}`}>
-          <FaLightbulb className="text-black text-lg mr-3" />
-          {isExpanded && <span>Analyse IA</span>}
+        <Link to="/analyseia" className={`flex items-center px-4 py-3 hover:bg-blue-700 ${isActive('/analyseetrecommendationia')}`}>
+          <FaLightbulb className="text-gray-300 text-lg mr-3" />
+          {isExpanded && <span className="text-gray-300">Analyse IA</span>}
         </Link>
-        <Link to="/calendrierencadreur" className={`flex items-center px-4 py-3 hover:bg-gray-100 ${isActive('/calendrierencadrant')}`}>
-          <FaCalendarAlt className="text-black text-lg mr-3" />
-          {isExpanded && <span>Calendrier</span>}
+        <Link to="/calendrierencadreur" className={`flex items-center px-4 py-3 hover:bg-blue-700 ${isActive('/calendrierencadrant')}`}>
+          <FaCalendarAlt className="text-gray-300 text-lg mr-3" />
+          {isExpanded && <span className="text-gray-300">Calendrier</span>}
         </Link>
-        <Link to="/notificationsencadreur" className={`flex items-center px-4 py-3 hover:bg-gray-100 ${isActive('/notificationsencadrant')}`}>
-          <FaBell className="text-black text-lg mr-3" />
-          {isExpanded && <span>Notifications</span>}
+        <Link to="/notificationsencadreur" className={`flex items-center px-4 py-3 hover:bg-blue-700 ${isActive('/notificationsencadrant')}`}>
+          <FaBell className="text-gray-300 text-lg mr-3" />
+          {isExpanded && <span className="text-gray-300">Notifications</span>}
         </Link>
-        <Link to="/parametresencadreur" className={`flex items-center px-4 py-3 hover:bg-gray-100 ${isActive('/parametresencadrant')}`}>
-          <FaCog className="text-black text-lg mr-3" />
-          {isExpanded && <span>Paramètres</span>}
+        <Link to="/parametresencadreur" className={`flex items-center px-4 py-3 hover:bg-blue-700 ${isActive('/parametresencadrant')}`}>
+          <FaCog className="text-gray-300 text-lg mr-3" />
+          {isExpanded && <span className="text-gray-300">Paramètres</span>}
         </Link>
       </nav>
     </div>

@@ -1,17 +1,14 @@
-import { Card } from 'primereact/card';
-import { Button } from 'primereact/button';
+import React from 'react';
 
 const ExportReportsCard = () => {
   return (
-    <Card title="📂 Export de rapports" className="shadow-sm bg-white">
-      <p className="text-sm text-gray-700 mb-4">
-        Exporte les rapports de suivi sous divers formats pour archivage ou réunion.
-      </p>
-      <div className="flex gap-4">
-        <Button label="Export CSV" icon="pi pi-file" className="p-button-sm p-button-secondary" />
-        <Button label="Export PDF" icon="pi pi-file-pdf" className="p-button-sm p-button-danger" />
-      </div>
-    </Card>
+    <div className="bg-white shadow rounded-lg p-6 h-full poppins-light">
+      <h2 className="text-lg font-semibold text-gray-700 mb-4">📤 Export & Rapports</h2>
+      <ul className="text-sm text-gray-600 space-y-2">
+        <li><strong>Export rapports mensuels :</strong> Activé</li>
+        <li><strong>Nombre d’exports cette semaine :</strong> 4</li>
+      </ul>
+    </div>
   );
 };
 

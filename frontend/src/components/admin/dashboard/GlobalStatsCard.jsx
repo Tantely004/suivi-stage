@@ -1,15 +1,16 @@
-import { Card } from 'primereact/card';
+import React from 'react';
 
 const GlobalStatsCard = () => {
   return (
-    <Card title="📊 Statistiques globales" className="shadow-sm bg-white">
-      <ul className="text-gray-700 text-sm space-y-2">
-        <li>👨‍🎓 Stagiaires inscrits : <strong>15</strong></li>
-        <li>🧑‍🏫 Encadreurs actifs : <strong>4</strong></li>
-        <li>📁 Projets en cours : <strong>8</strong></li>
-        <li>📅 Entretiens planifiés : <strong>5</strong></li>
+    <div className="bg-white shadow rounded-lg p-6 h-full poppins-light">
+      <h2 className="text-lg font-semibold text-gray-700 mb-4">👥 Statistiques Utilisateurs</h2>
+      <ul className="text-sm text-gray-600 space-y-2">
+        <li><strong>Total utilisateurs :</strong> 85</li>
+        <li><strong>Stagiaires :</strong> 60</li>
+        <li><strong>Encadreurs :</strong> 20</li>
+        <li><strong>Admins :</strong> 5</li>
       </ul>
-    </Card>
+    </div>
   );
 };
 

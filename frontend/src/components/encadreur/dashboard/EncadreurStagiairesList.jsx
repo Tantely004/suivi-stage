@@ -10,14 +10,12 @@ const EncadreurStagiairesList = () => {
             <p className="font-semibold">Jean Rakoto</p>
             <p>Projet : Tableau de bord RH</p>
           </div>
-          <Button icon="pi pi-eye" label="Fiche" className="p-button-text p-button-sm" />
         </li>
         <li className="flex justify-between items-center">
           <div>
             <p className="font-semibold">Fanja Randrian</p>
             <p>Projet : Gestion documentaire</p>
           </div>
-          <Button icon="pi pi-eye" label="Fiche" className="p-button-text p-button-sm" />
         </li>
       </ul>
     </div>

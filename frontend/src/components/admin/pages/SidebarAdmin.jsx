@@ -1,4 +1,4 @@
-import { FaBars, FaChartBar, FaUsers, FaCogs, FaFileExport, FaCog } from 'react-icons/fa';
+import { FaBars, FaChartBar, FaUserGraduate, FaChalkboardTeacher, FaUserShield, FaCogs, FaCog } from 'react-icons/fa';
 import { Link, useLocation } from 'react-router-dom';
 
 const SidebarAdmin = ({ isExpanded, setIsExpanded }) => {
@@ -8,34 +8,44 @@ const SidebarAdmin = ({ isExpanded, setIsExpanded }) => {
   return (
     <div className="h-full flex flex-col poppins-light">
       <button 
-        className="p-4 focus:outline-none text-black"
+        className="p-4 focus:outline-none text-gray-300"
         onClick={() => setIsExpanded(!isExpanded)}
       >
         <FaBars />
       </button>
 
-      {isExpanded && <div className="p-6 text-xl font-bold text-black">Ge<span className="text-blue-700">Stage</span></div>}
+      {isExpanded && <div className="xl:px-[1.5rem] xl:py-[0.5rem] text-xl font-bold text-gray-200">Ge<span className="text-blue-500">Stage</span></div>}
 
       <nav className="flex flex-col space-y-2 mt-8">
-        <Link to="/dashboardadmin" className={`flex items-center px-4 py-3 hover:bg-gray-100 ${isActive('/dashboardadmin')}`}>
-          <FaChartBar className="text-black text-lg mr-3" />
-          {isExpanded && <span>Dashboard</span>}
+        <Link to="/dashboardadmin" className={`flex items-center px-4 py-3 hover:bg-blue-700 ${isActive('/dashboardadmin')}`}>
+          <FaChartBar className="text-gray-300 text-lg mr-3" />
+          {isExpanded && <span className="text-gray-300">Tableau de bord</span>}
         </Link>
-        <Link to="/gestionutilisateursadmin" className={`flex items-center px-4 py-3 hover:bg-gray-100 ${isActive('/gestionutilisateurs')}`}>
-          <FaUsers className="text-black text-lg mr-3" />
-          {isExpanded && <span>Utilisateurs</span>}
+
+        <Link to="/gestionstagiairesadmin" className={`flex items-center px-4 py-3 hover:bg-blue-700 ${isActive('/gestionstagiairesadmin')}`}>
+          <FaUserGraduate className="text-gray-300 text-lg mr-3" />
+          {isExpanded && <span className="text-gray-300">Stagiaires</span>}
         </Link>
-        <Link to="/gestionsystemeadmin" className={`flex items-center px-4 py-3 hover:bg-gray-100 ${isActive('/gestionsysteme')}`}>
-          <FaCogs className="text-black text-lg mr-3" />
-          {isExpanded && <span>Système</span>}
+
+
+        <Link to="/gestionencadreursadmin" className={`flex items-center px-4 py-3 hover:bg-blue-700 ${isActive('/gestionencadreursadmin')}`}>
+          <FaChalkboardTeacher className="text-gray-300 text-lg mr-3" />
+          {isExpanded && <span className="text-gray-300">Encadreurs</span>}
         </Link>
-        <Link to="/exportrapportsadmin" className={`flex items-center px-4 py-3 hover:bg-gray-100 ${isActive('/exportetrapports')}`}>
-          <FaFileExport className="text-black text-lg mr-3" />
-          {isExpanded && <span>Export & Rapports</span>}
+
+        <Link to="/gestionadminsadmin" className={`flex items-center px-4 py-3 hover:bg-blue-700 ${isActive('/gestionadminsadmin')}`}>
+          <FaUserShield className="text-gray-300 text-lg mr-3" />
+          {isExpanded && <span className="text-gray-300">Administrateurs</span>}
         </Link>
-        <Link to="/parametresadmin" className={`flex items-center px-4 py-3 hover:bg-gray-100 ${isActive('/parametresadmin')}`}>
-          <FaCog className="text-black text-lg mr-3" />
-          {isExpanded && <span>Paramètres</span>}
+
+        <Link to="/administrationgenerale" className={`flex items-center px-4 py-3 hover:bg-blue-700 ${isActive('/administrationgenerale')}`}>
+          <FaCogs className="text-gray-300 text-lg mr-3" />
+          {isExpanded && <span className="text-gray-300">Administration Générale</span>}
+        </Link>
+
+        <Link to="/parametresadmin" className={`flex items-center px-4 py-3 hover:bg-blue-700 ${isActive('/parametresadmin')}`}>
+          <FaCog className="text-gray-300 text-lg mr-3" />
+          {isExpanded && <span className="text-gray-300">Paramètres</span>}
         </Link>
       </nav>
     </div>

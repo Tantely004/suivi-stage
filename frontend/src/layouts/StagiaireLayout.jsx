@@ -8,7 +8,7 @@ export default function StagiaireLayout() {
   return (
     <div className="flex h-screen">
       {/* Sidebar */}
-      <div className={`fixed h-full transition-all duration-300 ${isExpanded ? 'w-64' : 'w-20'} bg-white border-r shadow`}>
+      <div className={`fixed h-full transition-all duration-300 ${isExpanded ? 'w-64' : 'w-20'} bg-blue-800 border-r shadow`}>
         <Sidebar isExpanded={isExpanded} setIsExpanded={setIsExpanded} />
       </div>
 

@@ -1,30 +1,92 @@
-import { Card } from 'primereact/card';
-import { Button } from 'primereact/button';
-import { InputSwitch } from 'primereact/inputswitch';
-import { useState } from 'react';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { Dialog } from 'primereact/dialog';
 
-const ParametresAdmin = () => {
-  const [notifications, setNotifications] = useState(true);
+const ParametresEncadreur = () => {
+  const navigate = useNavigate();
+  const [receiveReminders, setReceiveReminders] = useState(true);
+  const [showConfirm, setShowConfirm] = useState(false);
+
+  const handlePasswordChange = () => {
+    navigate("/changepasswordadmin");  // Redirection vers page de modification
+  };
+
+  const handleAccountDeletion = () => {
+    alert("Compte supprimé avec succès !");
+    setShowConfirm(false);
+  };
 
   return (
-    <div className="flex-1 p-8 bg-gray-100 min-h-screen">
-      <h1 className="text-3xl font-bold text-gray-800 mb-8">Paramètres Administrateur</h1>
+    <div className="flex-1 p-8 bg-transparent min-h-screen">
+      <p className="text-3xl poppins-title mb-6">Paramètres du compte</p>
 
-      <Card title="🔐 Sécurité du compte" className="shadow-sm bg-white mb-6">
-        <p className="text-gray-700 text-sm mb-4">
-          Changez le mot de passe ou les préférences d’accès.
+      {/* Sécurité */}
+      <div className="bg-white p-6 rounded-lg shadow mb-6 poppins-light">
+        <h2 className="text-md font-semibold text-gray-700 mb-2">Sécurité</h2>
+        <button
+          className="text-sm bg-blue-700 text-white xl:p-[0.3rem] rounded"
+          onClick={handlePasswordChange}
+        >
+          Modifier le mot de passe
+        </button>
+      </div>
+
+      {/* Préférences */}
+      <div className="bg-white p-6 rounded-lg shadow mb-6 poppins-light">
+        <h2 className="text-md font-semibold text-gray-700 mb-2">Préférences</h2>
+        <label className="flex items-center gap-2 text-sm">
+          <input
+            type="checkbox"
+            checked={receiveReminders}
+            onChange={() => setReceiveReminders(!receiveReminders)}
+          />
+          Recevoir des rappels par e-mail
+        </label>
+      </div>
+
+      {/* Suppression */}
+      <div className="bg-white p-6 rounded-lg shadow poppins-light">
+        <h2 className="text-md font-semibold text-gray-700 mb-2">Supprimer le compte</h2>
+        <button
+          className="text-sm bg-red-700 text-white xl:p-[0.3rem] rounded"
+          onClick={() => setShowConfirm(true)}
+        >
+          Supprimer mon compte
+        </button>
+      </div>
+
+      {/* Popup de Confirmation */}
+      <Dialog
+        header={<p className="text-black font-bold pt-[1rem] pl-[0.5rem] text-xl poppins-title">Confirmation</p>}
+        visible={showConfirm}
+        style={{ width: '350px', paddingRight: '5px', paddingBottom: '2px', border: '1px solid #e5e7eb', borderRadius: '8px', backgroundColor: '#fff' }}
+        modal
+        onHide={() => setShowConfirm(false)}
+        contentStyle={{ backgroundColor: '#ffffff', borderRadius: '0.5rem', color: '#000' }}
+        footer={
+          <div className="flex justify-end gap-2">
+            <button
+              onClick={() => setShowConfirm(false)}
+              className="bg-blue-700 text-white p-[0.3rem] rounded"
+            >
+              Annuler
+            </button>
+            <button
+              onClick={handleAccountDeletion}
+              className="bg-red-700 text-white px-[0.3rem] rounded"
+            >
+              Supprimer
+            </button>
+          </div>
+        }
+      >
+        <p className="text-black text-sm poppins-light pl-[0.5rem]">
+          Êtes-vous sûr de vouloir supprimer votre compte ?<br />
+          Cette action est <strong>irréversible</strong>.
         </p>
-        <Button label="Modifier le mot de passe" icon="pi pi-key" className="p-button-sm p-button-warning" />
-      </Card>
-
-      <Card title="🔔 Préférences de notifications" className="shadow-sm bg-white">
-        <div className="flex items-center justify-between">
-          <span className="text-gray-700 text-sm">Recevoir les notifications système</span>
-          <InputSwitch checked={notifications} onChange={(e) => setNotifications(e.value)} />
-        </div>
-      </Card>
+      </Dialog>
     </div>
   );
 };
 
-export default ParametresAdmin;
+export default ParametresEncadreur;

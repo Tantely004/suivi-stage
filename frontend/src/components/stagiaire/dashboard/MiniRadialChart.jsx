@@ -25,11 +25,11 @@ const MiniRadialChart = ({ value, label, color }) => {
 
   return (
     <div className="bg-white shadow xl:rounded-lg xl:p-[1rem] text-center">
-      <div className="xl:w-[6rem] mx-auto">
+      <div className="xl:w-[6rem] xl:ml-[7rem]">
         <Doughnut data={data} options={options} />
       </div>
-      <p className="mt-2 text-sm text-gray-700">{label}</p>
-      <p className="font-bold text-blue-600 text-lg">{value}%</p>
+      <p className="xl:pt-[1rem] text-[1rem] text-gray-700 poppins-light">{label}</p>
+      <p className="font-bold text-blue-700 text-lg poppins-title">{value}%</p>
     </div>
   );
 };

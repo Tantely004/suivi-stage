@@ -1,18 +1,14 @@
-import { Card } from 'primereact/card';
-import { Button } from 'primereact/button';
+import React from 'react';
 
 const SystemAlertsCard = () => {
   return (
-    <Card title="⚠️ Alertes système" className="shadow-sm bg-white">
-      <ul className="text-sm text-gray-700 space-y-3">
-        <li>🔴 Rapport de stage non validé (Stagiaire : Fanja) — Échéance proche !</li>
-        <li>🟠 Nouveau stagiaire sans projet assigné.</li>
-        <li>🟡 Tuteur inactif depuis 14 jours.</li>
+    <div className="bg-white shadow rounded-lg p-6 h-full poppins-light">
+      <h2 className="text-lg font-semibold text-gray-700 mb-4">⚠️ Alertes Système</h2>
+      <ul className="text-sm text-red-600 space-y-2">
+        <li>🛑 Stagiaire sans encadreur affecté</li>
+        <li>⏳ Validation de rapport en attente (3)</li>
       </ul>
-      <div className="mt-4 text-right">
-        <Button label="Voir détails" className="p-button-sm p-button-secondary" />
-      </div>
-    </Card>
+    </div>
   );
 };
 

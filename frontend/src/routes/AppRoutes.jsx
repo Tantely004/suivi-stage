@@ -19,12 +19,20 @@ import MonStage from "../pages/stagiaire/pages/MonStage";
 import CalendrierStagiaire from "../pages/stagiaire/pages/CalendrierStagiaire";
 import ProfilStagiaire from "../pages/stagiaire/pages/ProfilStagiaire";
 import ParametresStagiaire from "../pages/stagiaire/pages/ParametresStagiaire";
+import SuggestionsIa from "../pages/stagiaire/pages/SuggestionIa";
 
 {/* CRUD dashboard stagiaire */}
 import EditStageInfo from "../pages/stagiaire/crud/EditStageInfo";
 import ManageDocuments from "../pages/stagiaire/crud/ManageDocuments";
-import ManageReports from "../pages/stagiaire/crud/ManageReports";
 import ManageTasksStage from "../pages/stagiaire/crud/ManageTaskStage";
+{/* CRUD et upload photo PhotoStagiaire */}
+import UploadPhotoStagiaire from "../pages/stagiaire/crud/UploadPhotoStagiaire";
+import EditProfilStagiaire from "../pages/stagiaire/crud/EditProfilStagiaire";
+{/* CRUD pour ParametresStagiaire */}
+import ChangePasswordStagiaire from "../pages/stagiaire/crud/ChangePasswordStagiaire";
+{/* CRUD pour CalendrierStagiaire */}
+import UploadCompteRenduStagiaire from "../pages/stagiaire/crud/UploadCompteRenduStagiaire";
+
 
 {/* Pages  encadreur */}
 import SignUpPageEncadreur from "../pages/encadreur/pages/SignUpPageEncadreur";
@@ -34,14 +42,24 @@ import CalendrierEncadreur from "../pages/encadreur/pages/CalendrierEncadreur";
 import GestionStagiaires from "../pages/encadreur/pages/GestionStagiaires";
 import NotificationsEncadreur from "../pages/encadreur/pages/NotificationsEncadreur";
 import ParametresEncadreur from "../pages/encadreur/pages/ParametresEncadreur";
+{/* Page CRUD pour CalendrierEncadreur */}
+import ManageEntretiensEncadreur from "../pages/encadreur/crud/ManageEntretiensEncadreur";
+{/* Page CRUD pour ParametresEncadreur */}
+import ChangePasswordEncadreur from "../pages/encadreur/crud/ChangePasswordEncadreur";
+{/* Page CRUD pour GestionStagiaire */}
+import SuiviRapportsStagiaires from "../pages/encadreur/crud/SuiviRapportsStagiaires";
 
 {/* Pages admin */}
 import SignUpPageAdmin from "../pages/admin/pages/SignUpAdmin";
 import DashboardAdmin from "../pages/admin/pages/DashboardAdmin";
-import ExportRapportsAdmin from "../pages/admin/pages/ExportRapportsAdmin";
-import GestionSystemeAdmin from "../pages/admin/pages/GestionSystemeAdmin";
-import GestionUtilisateursAdmin from "../pages/admin/pages/GestionUtilisateursAdmin";
+import GestionStagiairesAdmin from "../pages/admin/pages/GestionStagiairesAdmin";
+import GestionEncadreursAdmin from "../pages/admin/pages/GestionEncadreursAdmin";
+import GestionAdminsAdmin from "../pages/admin/pages/GestionAdminsAdmin";
+import AdministrationGenerale from "../pages/admin/pages/AdministrationGenerale";
 import ParametresAdmin from "../pages/admin/pages/ParametresAdmin";
+{/* Page CRUD pour ParametresAdmin */}
+import ChangePasswordAdmin from "../pages/admin/crud/ChangePasswordAdmin";
+
 
 export default function AppRoutes() {
   return (
@@ -54,7 +72,7 @@ export default function AppRoutes() {
         <Route path="/redirectionpage" element={<RedirectionPage />} />
         <Route path="/lostpasswordpage" element={<LostPasswordPage />} />
 
-        {/* Pages stagiaires avec le layout StagiaireLayout */}
+        {/* Pages pour interface stagiaire stagiaires avec le layout StagiaireLayout */}
         <Route path="/signuppagestagiaire" element={<SignUpPageStagiaire />} />
         <Route element={<StagiaireLayout />}>
           <Route path="/dashboardstagiaire" element={<DashboardStagiaire />} />
@@ -62,13 +80,27 @@ export default function AppRoutes() {
           <Route path="/calendrierstagiaire" element={<CalendrierStagiaire />} />
           <Route path="/profilstagiaire" element={<ProfilStagiaire />} />
           <Route path="/parametresstagiaire" element={<ParametresStagiaire />} />
+          <Route path="/suggestionsia" element={<SuggestionsIa />} />
+          
+          {/* Pages CRUD pour Mon Stage */}
+          <Route path="/editstageinfo" element={<EditStageInfo />} />
+          <Route path="/managedocuments" element={<ManageDocuments />} />
+          <Route path="/managetaskstage" element={<ManageTasksStage />} />
+
+          {/* Page CRUD pour ProfilStagiaire */}
+          <Route path="/uploadphotostagiaire" element={<UploadPhotoStagiaire />} />
+          <Route path="/editprofilstagiaire" element={<EditProfilStagiaire />} />
+
+          {/* Page CRUD pour ParametresStagiaire */}
+          <Route path="/changepasswordstagiaire" element={<ChangePasswordStagiaire />} />
+
+          {/* Page CRUD pour CalendrierStagiaire */}
+          <Route path="/uploadcompterendustagiaire/:id" element={<UploadCompteRenduStagiaire />} />
+
         </Route>
 
-        {/* Pages CRUD pour Mon Stage */}
-        <Route path="/editstageinfo" element={<EditStageInfo />} />
-        <Route path="/managedocuments" element={<ManageDocuments />} />
-        <Route path="/managereports" element={<ManageReports />} />
-        <Route path="/managetaskstage" element={<ManageTasksStage />} />
+        
+        
 
         {/* Pages pour interface encadreur avec Sidebar*/}
         <Route path="/signuppageencadreur" element={<SignUpPageEncadreur />} />
@@ -79,16 +111,31 @@ export default function AppRoutes() {
           <Route path="/gestionstagiaires" element={<GestionStagiaires />} />
           <Route path="/notificationsencadreur" element={<NotificationsEncadreur />} />
           <Route path="/parametresencadreur" element={<ParametresEncadreur />} />
+
+          {/* Page CRUD pour CalendrierEncadreur */}
+          <Route path="/manageentretiensencadreur" element={<ManageEntretiensEncadreur />} />
+
+          {/* Page CRUD pour ParametresEncadreur */}
+          <Route path="/changepasswordencadreur" element={<ChangePasswordEncadreur />} />
+
+          {/* Page CRUD pour GestionStagiaire */}
+          <Route path="/suivirapportsstagiaires/:id" element={<SuiviRapportsStagiaires />} />
         </Route>
+
 
         {/* Pages pour interface admin avec Sidebar */}
         <Route path="/signuppageadmin" element={<SignUpPageAdmin />} />
         <Route element={<AdminLayout />}>
           <Route path="/dashboardadmin" element={<DashboardAdmin />} />
-          <Route path="/exportrapportsadmin" element={<ExportRapportsAdmin />} />
-          <Route path="/gestionsystemeadmin" element={<GestionSystemeAdmin />} />
-          <Route path="/gestionutilisateursadmin" element={<GestionUtilisateursAdmin />} />
+          <Route path="/gestionstagiairesadmin" element={<GestionStagiairesAdmin />} />
+          <Route path="/gestionencadreursadmin" element={<GestionEncadreursAdmin />} />
+          <Route path="/gestionadminsadmin" element={<GestionAdminsAdmin />} />
+          <Route path="/administrationgenerale" element={<AdministrationGenerale />} />
           <Route path="/parametresadmin" element={<ParametresAdmin />} />
+
+          {/* Page CRUD pour ParametresAdmin */}
+          <Route path="/changepasswordadmin" element={<ChangePasswordAdmin />} />
+
         </Route>
 
       </Routes>
